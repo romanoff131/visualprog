@@ -1,32 +1,49 @@
-#include <iostream>
 #include <string>
+#include <QCoreApplication>
+#include <QTextStream>
+#include <iostream>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
 #define N 15
-//srand(time(NULL));
+
 using namespace std;
 
+class Human {
+private:
+    int age;
+    int weight;
+    string name;
+public:
+    void Print() {
+        cout<<"Имя: "<< name <<endl <<"Возраст: "<< age << endl <<"Вес: "<< weight<<endl;
+    }
+    void setName() {
+        cout<<"Введите имя: ";
+        cin>>name;
+    }
+    void setAge() {
+        cout<<"Введите возраст : ";
+        cin>>age;
+    }
+    void setWeight() {
+        cout<<"Введите вес: ";
+        cin>>weight;
+    }
+    string getName() {
+        return name;
+    }
+    int getAge() {
+        return age;
+    }
+    int getWeight() {
+        return weight;
+    }
 
-void average_value(int z, int x, int y) {
-
-    z = sqrt(pow(x,2)+pow(y,2));
-    std::cout<<"Пройденное расстояние "<<z<<endl;
-}
+};
 
 int main() {
+    Human Pavel;
 
-    srand(time(NULL));
-    int x = 4, y = 1;
-    int z = 0;
-    for(int i = 0; i<N; i++) {
-        int w = (rand()%3)-1;
-        x = w + x;
-        y = w + y;
-        std::cout<<"Значение х и у после перемещения: "<<"("<<x<<";"<<y<<")"<<endl;
-        if(i == N - N or i == N - 1) {
-            average_value(z,x,y);
-        }
-    }
     return 0;
 }
